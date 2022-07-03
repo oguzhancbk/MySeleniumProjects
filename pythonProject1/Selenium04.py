@@ -1,3 +1,5 @@
+#DropDown
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -8,8 +10,6 @@ driver = webdriver.Chrome(service=serv_obj)
 driver.get("https://www.opencart.com/index.php?route=common/home")
 driver.maximize_window()
 driver.implicitly_wait(15)
-
-#Dropdown
 
 register = driver.find_element(By.XPATH,"//a[@class='btn btn-black navbar-btn']").click()
 username = driver.find_element(By.XPATH,"//input[@id='input-username']").send_keys("ozi123")
