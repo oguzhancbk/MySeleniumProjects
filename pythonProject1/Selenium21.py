@@ -1,4 +1,4 @@
-#How to Upload File
+#Boostrap DropDown
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
@@ -11,7 +11,16 @@ serv_obj = Service("C:\chromedriver.exe")
 driver = webdriver.Chrome(service=serv_obj)
 driver.implicitly_wait(10)
 
-driver.get("https://www.monsterindia.com/")
+driver.get("https://www.dummyticket.com/dummy-ticket-for-visa-application/")
 driver.maximize_window()
-driver.find_element(By.XPATH,"//span[@class='uprcse semi-bold']").click()
-driver.find_element(By.XPATH,"//*[@id='file-upload']").send_keys(r"C:\Users\oguzh\PycharmProjects\pythonProject1\file-sample_150kB.pdf.pdf")
+
+countriesList = driver.find_elements(By.XPATH,"//select[@id='billing_country']/option")
+
+print(len(countriesList))
+
+for country in countriesList:
+    if country.text == 'Turkey':
+        country.click()
+        break
+
+

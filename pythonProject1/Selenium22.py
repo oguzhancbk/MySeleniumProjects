@@ -1,4 +1,7 @@
-#How to Upload File
+#CaptureScreenShot
+
+import os
+import time
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains, Keys
@@ -11,7 +14,8 @@ serv_obj = Service("C:\chromedriver.exe")
 driver = webdriver.Chrome(service=serv_obj)
 driver.implicitly_wait(10)
 
-driver.get("https://www.monsterindia.com/")
+driver.get("https://www.nopcommerce.com/tr/demo")
 driver.maximize_window()
-driver.find_element(By.XPATH,"//span[@class='uprcse semi-bold']").click()
-driver.find_element(By.XPATH,"//*[@id='file-upload']").send_keys(r"C:\Users\oguzh\PycharmProjects\pythonProject1\file-sample_150kB.pdf.pdf")
+driver.save_screenshot(os.getcwd()+"\\home2.png")
+time.sleep(2)
+driver.quit()
